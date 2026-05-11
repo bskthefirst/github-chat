@@ -1,0 +1,198 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', Helvetica, Arial, sans-serif;
+  background: #f6f8fa;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chat-title {
+  background: #2da44e;
+  color: white;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.chat-title h1 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.chat-title h2 {
+  font-size: 11px;
+  font-weight: 400;
+  opacity: 0.85;
+  margin: 0;
+}
+
+.chat-title .avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.chat-title .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  background: #ffffff;
+}
+
+.messages-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.message {
+  max-width: 80%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.message.self {
+  align-self: flex-end;
+  background: #2da44e;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.message.other {
+  align-self: flex-start;
+  background: #f0f0f0;
+  color: #24292f;
+  border-bottom-left-radius: 4px;
+}
+
+.message .sender {
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  opacity: 0.7;
+}
+
+.message .btn-delete {
+  background: rgba(0,0,0,0.15);
+  color: inherit;
+  border: none;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  cursor: pointer;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.message .btn-delete:hover {
+  background: rgba(0,0,0,0.3);
+}
+
+.message-box {
+  padding: 10px 12px;
+  background: #ffffff;
+  border-top: 1px solid #d0d7de;
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.message-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #d0d7de;
+  border-radius: 20px;
+  font-size: 13px;
+  font-family: inherit;
+  resize: none;
+  outline: none;
+  min-height: 20px;
+}
+
+.message-input:focus {
+  border-color: #2da44e;
+  box-shadow: 0 0 0 2px rgba(45,164,78,0.2);
+}
+
+.message-submit {
+  background: #2da44e;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.message-submit:hover {
+  background: #2c974b;
+}
+
+.message-submit:active {
+  background: #238636;
+}
+
+/* Scrollbar styling */
+.messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background: #d0d7de;
+  border-radius: 3px;
+}
+
+/* Deleted message style */
+.message.deleted {
+  font-style: italic;
+  opacity: 0.5;
+}
+
+/* Loading and error states */
+.loading {
+  text-align: center;
+  color: #656d76;
+  padding: 20px;
+  font-size: 13px;
+}
+
+.error-msg {
+  text-align: center;
+  color: #cf222e;
+  padding: 20px;
+  font-size: 13px;
+}
