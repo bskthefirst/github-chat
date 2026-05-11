@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+  <div class="chat">
+    <div class="chat-title">
+      <div style="display:flex;flex-direction:column;">
+        <h1>GitHub Chat</h1>
+        <h2>Ask questions, discuss repos</h2>
+      </div>
+      <figure class="avatar">
+        <img src="https://p7.hiclipart.com/preview/349/273/275/livechat-online-chat-computer-icons-chat-room-web-chat-others.jpg" />
+      </figure>
+    </div>
+    <div class="messages">
+      <div class="messages-content" id="messages-content">
+        <div class="loading">Loading messages...</div>
+      </div>
+    </div>
+    <div class="message-box">
+      <textarea class="message-input" id="message" placeholder="Type message..." rows="1"></textarea>
+      <button class="message-submit" onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+  <script src="chat.js"></script>
+</body>
+</html>
