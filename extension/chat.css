@@ -56,6 +56,28 @@ body {
   object-fit: cover;
 }
 
+.chat-title .btn-minimize {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.chat-title .btn-minimize:hover {
+  background: rgba(255,255,255,0.35);
+}
+
 .messages {
   flex: 1;
   overflow-y: auto;

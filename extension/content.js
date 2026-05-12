@@ -92,4 +92,18 @@
     chrome.storage.local.set({ chatOpen: isOpen });
   });
   observer.observe(chatContainer, { attributes: true, attributeFilter: ['style'] });
+
+  // Listen for minimize from iframe
+  window.addEventListener('message', (event) => {
+    if (event.data && event.data.action === 'minimize-chat') {
+      if (isOpen) {
+        isOpen = false;
+        chatContainer.style.display = 'none';
+        toggleBtn.innerHTML = '💬';
+        toggleBtn.style.background = '#2da44e';
+        toggleBtn.title = 'Open GitHub Chat';
+        chrome.storage.local.set({ chatOpen: false });
+      }
+    }
+  });
 })();

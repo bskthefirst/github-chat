@@ -118,3 +118,11 @@ function escapeHtml(text) {
   div.textContent = text;
   return div.innerHTML;
 }
+
+// Minimize button
+const btnMinimize = document.getElementById('btn-minimize');
+if (btnMinimize) {
+  btnMinimize.addEventListener('click', function() {
+    parent.postMessage({ action: 'minimize-chat' }, '*');
+  });
+}
