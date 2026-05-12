@@ -118,3 +118,11 @@ function escapeHtml(text) {
   div.textContent = text;
   return div.innerHTML;
 }
+
+// Minimize button
+const minimizeBtn = document.getElementById('chat-minimize');
+if (minimizeBtn) {
+  minimizeBtn.addEventListener('click', () => {
+    parent.postMessage({ type: 'github-chat-minimize' }, '*');
+  });
+}

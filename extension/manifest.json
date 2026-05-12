@@ -17,9 +17,6 @@
       "js": [
         "content.js"
       ],
-      "css": [
-        "chat.css"
-      ],
       "run_at": "document_end"
     }
   ],
